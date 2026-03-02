@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoPockitt — Student Deals in Perth CBD | Save More, Spend Less</title>
+    <meta name="description" content="GoPockitt helps Perth students discover exclusive deals, discounts and experiences in the CBD. Save money on food, fitness, retail and more near Yagan Square.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7B68EE">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GoPockitt">
+    <link rel="apple-touch-icon" href="icons/icon-192.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">👛</span>
+                <span class="logo-text">Go<span class="logo-highlight">Pock<span class="logo-it">it</span>t</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#deals" class="nav-link">Deals</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#map" class="nav-link">Near Me</a>
+                <a href="partner.html" class="nav-link">For Businesses</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="signInBtn">Sign In</button>
+                <button class="btn btn-primary" id="getStartedBtn">Get Free Access</button>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    New: Thousands of students now in Perth CBD
+                </div>
+                <h1 class="hero-title">
+                    Save Big as a
+                    <span class="gradient-text">Perth Student</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Unlock exclusive deals from 150+ cafes, restaurants, gyms and shops in Perth CBD.
+                    Built for the thousands of students now studying in the city.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-lg" id="heroCtaBtn">
+                        Browse Deals — It's Free
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </button>
+                    <div class="hero-stats">
+                        <div class="stat-avatars">
+                            <div class="avatar" style="background: #FF6B35;">J</div>
+                            <div class="avatar" style="background: #4ECDC4;">S</div>
+                            <div class="avatar" style="background: #7B68EE;">M</div>
+                            <div class="avatar" style="background: #FF69B4;">A</div>
+                        </div>
+                        <span class="stat-text">2,400+ students already saving</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="deal-preview-card">
+                    <div class="preview-header">
+                        <span class="preview-badge hot">HOT DEAL</span>
+                        <span class="preview-save">Save 30%</span>
+                    </div>
+                    <div class="preview-emoji">☕</div>
+                    <h3>Morning Brew Special</h3>
+                    <p>Any coffee + pastry for $6.50</p>
+                    <div class="preview-location">📍 200m from Yagan Square</div>
+                    <button class="btn btn-primary btn-sm">Claim Deal</button>
+                </div>
+                <div class="deal-preview-card floating-card-2">
+                    <div class="preview-header">
+                        <span class="preview-badge new">NEW</span>
+                        <span class="preview-save">Save 50%</span>
+                    </div>
+                    <div class="preview-emoji">🏋️</div>
+                    <h3>Student Gym Pass</h3>
+                    <p>First month just $19.99</p>
+                    <div class="preview-location">📍 Pier Street</div>
+                    <button class="btn btn-primary btn-sm">Claim Deal</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </header>
+
+    <!-- Social Proof Bar -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <span class="proof-number" data-target="150">0</span>
+                    <span class="proof-label">Partner Businesses</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-number" data-target="2400">0</span>
+                    <span class="proof-label">Active Students</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-number dollar" data-target="89000">0</span>
+                    <span class="proof-label">Saved by Students</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-number" data-target="4.8">0</span>
+                    <span class="proof-label">Average Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Find the best student deals across Perth CBD</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="food">
+                    <div class="category-icon">🍜</div>
+                    <h3>Food & Dining</h3>
+                    <p>68 deals</p>
+                </div>
+                <div class="category-card" data-category="coffee">
+                    <div class="category-icon">☕</div>
+                    <h3>Coffee & Drinks</h3>
+                    <p>42 deals</p>
+                </div>
+                <div class="category-card" data-category="fitness">
+                    <div class="category-icon">🏋️</div>
+                    <h3>Fitness & Wellness</h3>
+                    <p>18 deals</p>
+                </div>
+                <div class="category-card" data-category="retail">
+                    <div class="category-icon">🛍️</div>
+                    <h3>Retail & Fashion</h3>
+                    <p>31 deals</p>
+                </div>
+                <div class="category-card" data-category="entertainment">
+                    <div class="category-icon">🎬</div>
+                    <h3>Entertainment</h3>
+                    <p>24 deals</p>
+                </div>
+                <div class="category-card" data-category="services">
+                    <div class="category-icon">💼</div>
+                    <h3>Services & More</h3>
+                    <p>15 deals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Deals Section -->
+    <section class="deals" id="deals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Today's Top Deals</h2>
+                <p class="section-subtitle">Verified exclusive offers for Perth students</p>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Deals</button>
+                <button class="filter-btn" data-filter="food">Food</button>
+                <button class="filter-btn" data-filter="coffee">Coffee</button>
+                <button class="filter-btn" data-filter="fitness">Fitness</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+                <button class="filter-btn" data-filter="entertainment">Entertainment</button>
+            </div>
+
+            <!-- Deals Grid -->
+            <div class="deals-grid" id="dealsGrid">
+                <!-- Deals loaded dynamically from API -->
+                <div class="deals-loading" style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: var(--gray-400);">
+                    <div style="font-size: 2rem; margin-bottom: 12px;">🔄</div>
+                    Loading deals...
+                </div>
+            </div>
+
+            <div class="deals-cta">
+                <button class="btn btn-outline btn-lg" id="loadMoreBtn">View All 150+ Deals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Start saving in under 60 seconds</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📱</div>
+                    <h3>Sign Up Free</h3>
+                    <p>Register with your university email (.edu.au) to verify your student status. Takes 30 seconds.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="60" height="20" viewBox="0 0 60 20"><path d="M0 10h50l-5-5M50 10l-5 5" stroke="#7B68EE" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Browse Deals</h3>
+                    <p>Explore deals by category, location, or search. New deals added daily from Perth CBD businesses.</p>
+                </div>
+                <div class="step-connector">
+                    <svg width="60" height="20" viewBox="0 0 60 20"><path d="M0 10h50l-5-5M50 10l-5 5" stroke="#7B68EE" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🎫</div>
+                    <h3>Claim & Save</h3>
+                    <p>Tap "Claim Deal" to get your unique code. Show it at checkout and enjoy instant savings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map / Location Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Deals Near You in Perth CBD</h2>
+                <p class="section-subtitle">Everything within walking distance of Yagan Square and beyond</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-visual">
+                        <div class="map-center-pin">
+                            <span>🎓</span>
+                            <div class="pin-label">Yagan Square<br>Perth CBD</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 20%; left: 30%;">
+                            <span>☕</span>
+                            <div class="pin-tooltip">Coffee Co. — $6.50 combo</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 35%; left: 70%;">
+                            <span>🍜</span>
+                            <div class="pin-tooltip">Pho House — Any bowl $12</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 65%; left: 25%;">
+                            <span>🏋️</span>
+                            <div class="pin-tooltip">FitCity — $19.99/mo</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 75%; left: 65%;">
+                            <span>🎬</span>
+                            <div class="pin-tooltip">Palace Cinemas — $12 Wed</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 15%; left: 55%;">
+                            <span>🧋</span>
+                            <div class="pin-tooltip">Boba Bliss — BOGO</div>
+                        </div>
+                        <div class="map-deal-pin" style="top: 50%; left: 45%;">
+                            <span>🌮</span>
+                            <div class="pin-tooltip">Taco Junction — 3 for $10</div>
+                        </div>
+                        <div class="radius-circle"></div>
+                    </div>
+                    <div class="map-legend">
+                        <div class="legend-item"><span class="legend-dot food"></span> Food & Dining</div>
+                        <div class="legend-item"><span class="legend-dot coffee"></span> Coffee & Drinks</div>
+                        <div class="legend-item"><span class="legend-dot fitness"></span> Fitness</div>
+                        <div class="legend-item"><span class="legend-dot entertainment"></span> Entertainment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- International Students Section -->
+    <section class="international">
+        <div class="container">
+            <div class="international-grid">
+                <div class="international-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Welcome to Perth
+                    </div>
+                    <h2 class="section-title">New to Perth? We've Got You.</h2>
+                    <p>Moving to a new city is exciting but can be overwhelming. GoPockitt is specially designed to help international students discover the best of Perth CBD — from affordable food to essential services.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🌏</span>
+                            <div>
+                                <strong>Multi-language Support</strong>
+                                <p>Deals and descriptions available in Mandarin, Hindi, Indonesian, Korean & more</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">💰</span>
+                            <div>
+                                <strong>Budget-Friendly Finds</strong>
+                                <p>Curated deals under $10 — perfect for students on a tight budget</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🗺️</span>
+                            <div>
+                                <strong>Perth CBD Guide</strong>
+                                <p>Navigate the city like a local with our neighbourhood guides and transport tips</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">👥</span>
+                            <div>
+                                <strong>Student Community</strong>
+                                <p>Connect with other students, share reviews, and find study groups</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="international-visual">
+                    <div class="testimonial-stack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"I saved over $200 in my first month! As an international student, GoPockitt helped me find affordable food near campus."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: #FF6B35;">W</div>
+                                <div>
+                                    <strong>Wei Chen</strong>
+                                    <span>Computer Science Student</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The gym deal alone saved me $240 a year. Plus I discovered so many great cafes I wouldn't have found on my own."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: #4ECDC4;">P</div>
+                                <div>
+                                    <strong>Priya Sharma</strong>
+                                    <span>Business Student</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Best thing about studying in Perth CBD! I use it every single day for lunch. The boba deal is unreal."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar" style="background: #7B68EE;">J</div>
+                                <div>
+                                    <strong>James O'Brien</strong>
+                                    <span>Engineering Student</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business CTA Section -->
+    <section class="business-cta">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Own a Business in Perth CBD?</h2>
+                    <p>Thousands of students are looking for your business. Partner with GoPockitt to drive foot traffic, increase sales, and build loyalty with the next generation of customers.</p>
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">3x</span>
+                            <span class="cta-stat-label">More foot traffic</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">$0</span>
+                            <span class="cta-stat-label">Upfront cost</span>
+                        </div>
+                        <div class="cta-stat">
+                            <span class="cta-stat-number">89%</span>
+                            <span class="cta-stat-label">Return customers</span>
+                        </div>
+                    </div>
+                    <a href="partner.html" class="btn btn-primary btn-lg">Partner With Us — Free to Start</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Signup Section -->
+    <section class="signup-section" id="signup">
+        <div class="container">
+            <div class="signup-card">
+                <h2>Get Early Access</h2>
+                <p>Be the first to know about new deals. Enter your university email below.</p>
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your name" id="nameInput" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="your.name@ecu.edu.au" id="emailInput" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="universitySelect">
+                            <option value="">Select your university</option>
+                            <option value="ecu">Edith Cowan University</option>
+                            <option value="uwa">University of Western Australia</option>
+                            <option value="curtin">Curtin University</option>
+                            <option value="murdoch">Murdoch University</option>
+                            <option value="notre-dame">University of Notre Dame</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full">Join GoPockitt — It's Free</button>
+                    <p class="form-note">No spam, ever. Unsubscribe anytime.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">👛</span>
+                        <span class="logo-text">Go<span class="logo-highlight">Pock<span class="logo-it">it</span>t</span></span>
+                    </a>
+                    <p>Helping Perth students save money and discover the best of the CBD since 2025.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="TikTok">🎵</a>
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>For Students</h4>
+                    <a href="#deals">Browse Deals</a>
+                    <a href="#categories">Categories</a>
+                    <a href="#map">Deals Near Me</a>
+                    <a href="#">Student Blog</a>
+                    <a href="#">Perth CBD Guide</a>
+                </div>
+                <div class="footer-links">
+                    <h4>For Businesses</h4>
+                    <a href="partner.html">Partner With Us</a>
+                    <a href="#">Advertising</a>
+                    <a href="#">Success Stories</a>
+                    <a href="#">Business Dashboard</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GoPockitt. All rights reserved. Made with ❤️ in Perth, Western Australia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Claim Deal Modal -->
+    <div class="modal-overlay" id="claimModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content">
+                <div class="modal-icon">🎉</div>
+                <h2>Deal Claimed!</h2>
+                <p class="modal-deal-name" id="modalDealName"></p>
+                <div class="modal-code-container">
+                    <span class="modal-code-label">Your unique code:</span>
+                    <div class="modal-code" id="modalCode">PKT-XXXX</div>
+                    <button class="btn btn-outline btn-sm" id="copyCodeBtn">Copy Code</button>
+                </div>
+                <div class="modal-instructions">
+                    <p>Show this code at the counter to redeem your deal.</p>
+                    <p class="modal-expiry">Valid for 24 hours</p>
+                </div>
+                <button class="btn btn-primary btn-full" id="modalDoneBtn">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="authModalClose">&times;</button>
+            <div class="modal-content">
+                <div class="modal-icon">👛</div>
+                <h2 id="authTitle">Join GoPockitt</h2>
+                <p>Sign up with your university email to access exclusive deals</p>
+                <form class="auth-form" id="authForm">
+                    <div class="form-group" id="authNameGroup">
+                        <input type="text" placeholder="Full name" id="authName">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="your.name@ecu.edu.au" id="authEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" id="authPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="authSubmitBtn">Create Account</button>
+                </form>
+                <p class="auth-switch">
+                    <span id="authSwitchText">Already have an account?</span>
+                    <a href="#" id="authSwitchLink">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('GoPockitt SW registered'))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

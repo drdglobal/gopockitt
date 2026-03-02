@@ -1,0 +1,441 @@
+/* ==========================================
+   GoPockitt — Partner Dashboard Styles
+   ========================================== */
+
+/* Dashboard Navbar */
+.dash-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: var(--dark-2);
+    border-bottom: 1px solid var(--dark-3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.dash-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dash-business-name {
+    color: var(--gray-300);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Dashboard Layout */
+.dash-layout {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 65px;
+}
+
+/* Sidebar */
+.dash-sidebar {
+    width: 220px;
+    background: var(--dark-2);
+    border-right: 1px solid var(--dark-3);
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: fixed;
+    top: 65px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+
+.sidebar-btn:hover {
+    background: var(--dark-3);
+    color: var(--white);
+}
+
+.sidebar-btn.active {
+    background: rgba(123, 104, 238, 0.15);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Main Content */
+.dash-main {
+    flex: 1;
+    margin-left: 220px;
+    padding: 32px 40px;
+    max-width: 900px;
+}
+
+.dash-section {
+    display: none;
+}
+
+.dash-section.active {
+    display: block;
+}
+
+.dash-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.dash-subtitle {
+    color: var(--gray-400);
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+}
+
+/* Verify Code Section */
+.verify-box {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.verify-input {
+    flex: 1;
+    max-width: 300px;
+    padding: 16px 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    background: var(--dark-3);
+    border: 2px solid var(--dark-3);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.verify-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(123, 104, 238, 0.15);
+}
+
+.verify-input::placeholder {
+    color: var(--gray-500);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+/* Verify Result Cards */
+.verify-result-card {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    margin-top: 16px;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.verify-result-card.success {
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.verify-result-card.error {
+    background: rgba(245, 87, 108, 0.1);
+    border: 1px solid rgba(245, 87, 108, 0.3);
+}
+
+.verify-result-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.verify-result-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.verify-result-card.success .verify-result-title {
+    color: var(--accent);
+}
+
+.verify-result-card.error .verify-result-title {
+    color: #f5576c;
+}
+
+.verify-result-detail {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+}
+
+/* Deals Table */
+.deals-table-wrap {
+    overflow-x: auto;
+}
+
+.deals-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.deals-table th,
+.deals-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-3);
+    font-size: 0.9rem;
+}
+
+.deals-table th {
+    color: var(--gray-400);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.deals-table td {
+    color: var(--gray-200);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.active {
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--accent);
+}
+
+.status-badge.paused {
+    background: rgba(254, 225, 64, 0.15);
+    color: var(--warning);
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--dark-3);
+    background: transparent;
+    color: var(--gray-300);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: inherit;
+    transition: var(--transition);
+    margin-right: 6px;
+}
+
+.action-btn:hover {
+    background: var(--dark-3);
+    color: var(--white);
+}
+
+.action-btn.pause {
+    border-color: rgba(254, 225, 64, 0.3);
+    color: var(--warning);
+}
+
+.action-btn.activate {
+    border-color: rgba(78, 205, 196, 0.3);
+    color: var(--accent);
+}
+
+/* Create Deal Form */
+.create-form {
+    max-width: 700px;
+}
+
+.create-form .form-group {
+    margin-bottom: 20px;
+}
+
+.create-form label {
+    display: block;
+    color: var(--gray-300);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.create-form input,
+.create-form select,
+.create-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--dark-3);
+    border: 1px solid var(--dark-3);
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.create-form input:focus,
+.create-form select:focus,
+.create-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.15);
+}
+
+.create-form select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.create-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+/* Analytics */
+.analytics-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: var(--dark-2);
+    border: 1px solid var(--dark-3);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    text-align: center;
+}
+
+.stat-card.accent {
+    border-color: rgba(123, 104, 238, 0.3);
+    background: rgba(123, 104, 238, 0.08);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.stat-card.accent .stat-number {
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Activity Table */
+.activity-table-wrap {
+    overflow-x: auto;
+}
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.activity-table th,
+.activity-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-3);
+    font-size: 0.85rem;
+}
+
+.activity-table th {
+    color: var(--gray-500);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.activity-table td {
+    color: var(--gray-300);
+}
+
+/* Success message */
+.form-success {
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    text-align: center;
+    color: var(--accent);
+    font-weight: 600;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dash-sidebar {
+        width: 60px;
+        padding: 16px 8px;
+    }
+
+    .sidebar-btn span:not(.sidebar-icon) {
+        display: none;
+    }
+
+    .dash-main {
+        margin-left: 60px;
+        padding: 24px 16px;
+    }
+
+    .verify-box {
+        flex-direction: column;
+    }
+
+    .verify-input {
+        max-width: 100%;
+    }
+
+    .analytics-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

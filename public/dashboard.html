@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Dashboard — GoPockitt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7B68EE">
+</head>
+<body>
+    <!-- Dashboard Navbar -->
+    <nav class="dash-nav">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">👛</span>
+            <span class="logo-text">Go<span class="logo-highlight">Pock<span class="logo-it">it</span>t</span></span>
+        </a>
+        <div class="dash-nav-right">
+            <span class="dash-business-name" id="businessName">Business</span>
+            <button class="btn btn-outline btn-sm" id="logoutBtn">Sign Out</button>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="dash-layout">
+        <!-- Sidebar -->
+        <aside class="dash-sidebar">
+            <button class="sidebar-btn active" data-section="verify">
+                <span class="sidebar-icon">✅</span>
+                <span>Verify Code</span>
+            </button>
+            <button class="sidebar-btn" data-section="deals">
+                <span class="sidebar-icon">🎫</span>
+                <span>My Deals</span>
+            </button>
+            <button class="sidebar-btn" data-section="create">
+                <span class="sidebar-icon">➕</span>
+                <span>Create Deal</span>
+            </button>
+            <button class="sidebar-btn" data-section="analytics">
+                <span class="sidebar-icon">📊</span>
+                <span>Analytics</span>
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dash-main">
+
+            <!-- Verify Code Section -->
+            <section class="dash-section active" id="section-verify">
+                <h2>Verify Student Code</h2>
+                <p class="dash-subtitle">Enter the code shown by the student to verify and redeem their deal.</p>
+                <div class="verify-box">
+                    <input type="text" id="verifyCodeInput" class="verify-input" placeholder="PKT-XXXX" maxlength="8" autocomplete="off">
+                    <button class="btn btn-primary btn-lg" id="verifyBtn">Verify & Redeem</button>
+                </div>
+                <div id="verifyResult"></div>
+            </section>
+
+            <!-- My Deals Section -->
+            <section class="dash-section" id="section-deals">
+                <h2>My Deals</h2>
+                <p class="dash-subtitle">Manage your active deals and track performance.</p>
+                <div id="dealsTable" class="deals-table-wrap">
+                    <p style="color: var(--gray-400); text-align: center; padding: 40px;">Loading deals...</p>
+                </div>
+            </section>
+
+            <!-- Create Deal Section -->
+            <section class="dash-section" id="section-create">
+                <h2>Create New Deal</h2>
+                <p class="dash-subtitle">Add a new exclusive deal for students.</p>
+                <form id="createDealForm" class="create-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Deal Title *</label>
+                            <input type="text" id="dealTitle" placeholder="e.g. Student Morning Combo" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Category *</label>
+                            <select id="dealCategory" required>
+                                <option value="">Select category</option>
+                                <option value="food">Food</option>
+                                <option value="coffee">Coffee</option>
+                                <option value="fitness">Fitness</option>
+                                <option value="retail">Retail</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="services">Services</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description *</label>
+                        <textarea id="dealDescription" rows="3" placeholder="Describe the deal — what students get and any conditions..." required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Original Price</label>
+                            <input type="text" id="dealPriceOriginal" placeholder="e.g. $14.50">
+                        </div>
+                        <div class="form-group">
+                            <label>Deal Price</label>
+                            <input type="text" id="dealPriceDeal" placeholder="e.g. $8.50">
+                        </div>
+                        <div class="form-group">
+                            <label>Discount Label</label>
+                            <input type="text" id="dealDiscount" placeholder="e.g. -41%">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" id="dealLocation" placeholder="e.g. Yagan Square, Perth CBD">
+                        </div>
+                        <div class="form-group">
+                            <label>Time Restriction</label>
+                            <input type="text" id="dealTime" placeholder="e.g. 7am - 11am or All day">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Badge</label>
+                            <select id="dealBadge">
+                                <option value="">None</option>
+                                <option value="NEW">NEW</option>
+                                <option value="HOT">HOT</option>
+                                <option value="POPULAR">POPULAR</option>
+                                <option value="LIMITED">LIMITED</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Emoji</label>
+                            <input type="text" id="dealEmoji" placeholder="e.g. ☕ 🍜 💪" maxlength="4">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Create Deal</button>
+                </form>
+            </section>
+
+            <!-- Analytics Section -->
+            <section class="dash-section" id="section-analytics">
+                <h2>Analytics</h2>
+                <p class="dash-subtitle">Track how students are engaging with your deals.</p>
+                <div class="analytics-stats" id="analyticsStats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="statClaims">0</div>
+                        <div class="stat-label">Total Claims</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statRedemptions">0</div>
+                        <div class="stat-label">Redemptions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="statActive">0</div>
+                        <div class="stat-label">Active Claims</div>
+                    </div>
+                    <div class="stat-card accent">
+                        <div class="stat-number" id="statConversion">0%</div>
+                        <div class="stat-label">Conversion Rate</div>
+                    </div>
+                </div>
+                <h3 style="margin-top: 32px; margin-bottom: 16px;">Recent Activity</h3>
+                <div id="recentActivity" class="activity-table-wrap">
+                    <p style="color: var(--gray-400); text-align: center; padding: 40px;">Loading...</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
