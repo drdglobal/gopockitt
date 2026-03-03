@@ -1,12 +1,21 @@
 const Database = require('better-sqlite3');
 const path = require('path');
+const fs = require('fs');
 
 let db;
 
 function initDatabase() {
     // Use DATA_DIR env var (for Railway volume mount) or default to local data/ folder
     const dataDir = process.env.DATA_DIR || path.join(__dirname, '..', '..', 'data');
+
+    // Ensure the data directory exists
+    if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+        console.log(`Created data directory: ${dataDir}`);
+    }
+
     const dbPath = path.join(dataDir, 'gopockitt.db');
+    console.log(`Database path: ${dbPath}`);
     db = new Database(dbPath);
 
     // Enable WAL mode for better concurrent read performance
