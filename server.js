@@ -21,7 +21,7 @@ const db = initDatabase();
 const dealCount = db.prepare('SELECT COUNT(*) as count FROM deals').get();
 if (dealCount.count === 0) {
     console.log('Empty database detected — running seed...');
-    require('./data/seed');
+    require('./src/scripts/seed');
     console.log('Seed complete!');
 }
 

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { initDatabase, getDatabase } = require('../src/config/database');
+const { initDatabase, getDatabase } = require('../config/database');
 const bcrypt = require('bcryptjs');
 
 // Use existing database if already initialized, otherwise init fresh
