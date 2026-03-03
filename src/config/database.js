@@ -4,7 +4,9 @@ const path = require('path');
 let db;
 
 function initDatabase() {
-    const dbPath = path.join(__dirname, '..', '..', 'data', 'gopockitt.db');
+    // Use DATA_DIR env var (for Railway volume mount) or default to local data/ folder
+    const dataDir = process.env.DATA_DIR || path.join(__dirname, '..', '..', 'data');
+    const dbPath = path.join(dataDir, 'gopockitt.db');
     db = new Database(dbPath);
 
     // Enable WAL mode for better concurrent read performance

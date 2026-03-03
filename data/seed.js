@@ -2,9 +2,14 @@ require('dotenv').config();
 const { initDatabase, getDatabase } = require('../src/config/database');
 const bcrypt = require('bcryptjs');
 
-// Initialize database
-initDatabase();
-const db = getDatabase();
+// Use existing database if already initialized, otherwise init fresh
+let db;
+try {
+    db = getDatabase();
+} catch (e) {
+    initDatabase();
+    db = getDatabase();
+}
 
 console.log('Seeding database...');
 
