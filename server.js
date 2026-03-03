@@ -17,6 +17,14 @@ const PORT = process.env.PORT || 3000;
 // Initialize database
 const db = initDatabase();
 
+// Auto-seed if database is empty (first deploy)
+const dealCount = db.prepare('SELECT COUNT(*) as count FROM deals').get();
+if (dealCount.count === 0) {
+    console.log('Empty database detected — running seed...');
+    require('./data/seed');
+    console.log('Seed complete!');
+}
+
 // Middleware
 app.use(helmet({
     contentSecurityPolicy: false,
