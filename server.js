@@ -13,6 +13,7 @@ const subscriberRoutes = require('./src/routes/subscribers');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const LAUNCH_MODE = process.env.LAUNCH_MODE || 'live';
 
 // Initialize database
 const db = initDatabase();
@@ -35,6 +36,11 @@ app.use(express.json());
 
 // Serve static files from public/
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Config endpoint — exposes launch mode to frontend
+app.get('/api/config', (req, res) => {
+    res.json({ launchMode: LAUNCH_MODE });
+});
 
 // API Routes
 app.use('/api/auth', authRoutes);

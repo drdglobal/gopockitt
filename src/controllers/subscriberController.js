@@ -31,4 +31,15 @@ function subscribe(req, res) {
     }
 }
 
-module.exports = { subscribe };
+function getCount(req, res) {
+    try {
+        const db = getDatabase();
+        const result = db.prepare('SELECT COUNT(*) as count FROM subscribers WHERE unsubscribed = 0').get();
+        res.json({ count: result.count });
+    } catch (err) {
+        console.error('Subscriber count error:', err.message);
+        res.status(500).json({ error: 'Failed to get count.' });
+    }
+}
+
+module.exports = { subscribe, getCount };

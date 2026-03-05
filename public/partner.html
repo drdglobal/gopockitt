@@ -540,6 +540,23 @@
         }, { threshold: 0.1 });
 
         fadeElements.forEach(el => observer.observe(el));
+
+        // Pre-launch mode adjustments
+        (async () => {
+            try {
+                const res = await fetch('/api/config');
+                const { launchMode } = await res.json();
+                if (launchMode === 'prelaunch') {
+                    // Update trust badge
+                    const trustEl = document.querySelector('.partner-trust span');
+                    if (trustEl) trustEl.textContent = '🚀 Be one of our founding launch partners';
+
+                    // Update contact section text
+                    const contactP = document.querySelector('.contact-info p');
+                    if (contactP) contactP.textContent = "Be one of our founding launch partners. Fill out the form and we'll get you set up before launch day.";
+                }
+            } catch (e) {}
+        })();
     </script>
 </body>
 </html>

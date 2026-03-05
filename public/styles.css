@@ -1617,3 +1617,163 @@ a {
         font-size: 0.8rem;
     }
 }
+
+/* ==========================================
+   Pre-Launch / Waitlist Mode
+   ========================================== */
+
+/* Prevent flash of live content while loading config */
+body.loading {
+    opacity: 0;
+}
+body {
+    transition: opacity 0.3s ease;
+}
+
+/* Hero waitlist form */
+.prelaunch-mode .hero-waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 520px;
+    margin-top: 8px;
+}
+
+.prelaunch-mode .hero-form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.prelaunch-mode .hero-form-row input,
+.prelaunch-mode .hero-form-row select {
+    flex: 1;
+    padding: 14px 18px;
+    background: var(--dark-2);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.prelaunch-mode .hero-form-row input::placeholder {
+    color: var(--gray-500);
+}
+
+.prelaunch-mode .hero-form-row input:focus,
+.prelaunch-mode .hero-form-row select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123,104,238,0.2);
+}
+
+.prelaunch-mode .hero-form-row select {
+    appearance: none;
+    cursor: pointer;
+    color: var(--gray-500);
+}
+
+.prelaunch-mode .hero-form-row select option {
+    background: var(--dark-3);
+    color: var(--white);
+}
+
+.prelaunch-mode .hero-form-row .btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.prelaunch-mode .hero-stats {
+    margin-top: 16px;
+}
+
+.prelaunch-mode .hero-stats .stat-text {
+    color: var(--gray-400);
+    font-size: 0.95rem;
+}
+
+/* Deals teaser grid */
+.prelaunch-deals-teaser {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.teaser-card {
+    background: var(--dark-3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-lg);
+    padding: 32px 16px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.teaser-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.teaser-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.teaser-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-400);
+}
+
+.teaser-cta-text {
+    font-size: 1.1rem;
+    color: var(--gray-400);
+    margin-bottom: 20px;
+}
+
+/* Prelaunch hero success state */
+.prelaunch-mode .waitlist-success {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.prelaunch-mode .waitlist-success h3 {
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.prelaunch-mode .waitlist-success p {
+    color: var(--gray-400);
+}
+
+/* Responsive: tablet */
+@media (max-width: 768px) {
+    .prelaunch-mode .hero-form-row {
+        flex-direction: column;
+    }
+
+    .teaser-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive: mobile */
+@media (max-width: 480px) {
+    .teaser-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teaser-card {
+        padding: 24px 12px;
+    }
+
+    .teaser-emoji {
+        font-size: 2rem;
+    }
+}

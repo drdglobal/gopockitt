@@ -3,7 +3,7 @@
    Enables offline support & installability
    ========================================== */
 
-const CACHE_NAME = 'gopockitt-v2';
+const CACHE_NAME = 'gopockitt-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
