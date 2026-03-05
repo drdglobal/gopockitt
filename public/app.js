@@ -421,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateAuthForm() {
         if (isSignUp) {
-            authTitle.textContent = 'Join GoPockitt';
+            authTitle.innerHTML = 'Join GoPock<span class="logo-it">it</span>t';
             authNameGroup.style.display = 'block';
             authSubmitBtn.textContent = 'Create Account';
             authSwitchText.textContent = 'Already have an account?';
