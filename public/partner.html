@@ -554,6 +554,63 @@
                     // Update contact section text
                     const contactP = document.querySelector('.contact-info p');
                     if (contactP) contactP.textContent = "Be one of our founding launch partners. Fill out the form and we'll get you set up before launch day.";
+
+                    // Replace fake success stories with launch partner benefits
+                    const storiesSection = document.querySelector('.success-stories');
+                    if (storiesSection) {
+                        const header = storiesSection.querySelector('.section-header');
+                        if (header) {
+                            header.querySelector('h2').textContent = 'Why Partner at Launch?';
+                            header.querySelector('p').textContent = 'Early partners get the best perks';
+                        }
+                        const grid = storiesSection.querySelector('.stories-grid');
+                        if (grid) {
+                            grid.innerHTML = `
+                                <div class="story-card">
+                                    <div class="story-metric">
+                                        <span class="metric-number">11,000+</span>
+                                        <span class="metric-label">students in Perth CBD weekly</span>
+                                    </div>
+                                    <p>ECU's new city campus alone brings thousands of students to Perth CBD every day. They need places to eat, study, work out and shop.</p>
+                                    <div class="story-author">
+                                        <div class="author-avatar" style="background: #FF6B35;">🎓</div>
+                                        <div>
+                                            <strong>Massive Demand</strong>
+                                            <span>From Day One</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="story-card">
+                                    <div class="story-metric">
+                                        <span class="metric-number">$0</span>
+                                        <span class="metric-label">to get started</span>
+                                    </div>
+                                    <p>Founding partners get 3 months free on any plan. No upfront cost, no risk. Just create your deals and we'll drive students to your door.</p>
+                                    <div class="story-author">
+                                        <div class="author-avatar" style="background: #4ECDC4;">💰</div>
+                                        <div>
+                                            <strong>Zero Risk</strong>
+                                            <span>3 Months Free</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="story-card">
+                                    <div class="story-metric">
+                                        <span class="metric-number">Top</span>
+                                        <span class="metric-label">placement at launch</span>
+                                    </div>
+                                    <p>Early partners get premium placement on the platform when we launch. Your deals will be the first ones students see.</p>
+                                    <div class="story-author">
+                                        <div class="author-avatar" style="background: #7B68EE;">⭐</div>
+                                        <div>
+                                            <strong>Priority Listing</strong>
+                                            <span>Featured at Launch</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
                 }
             } catch (e) {}
         })();

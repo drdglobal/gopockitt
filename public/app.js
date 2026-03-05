@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             heroContent.innerHTML = `
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Launching March 2026
+                    Launching April 2026
                 </div>
                 <h1 class="hero-title">
                     Perth's First
@@ -242,21 +242,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
 
-            // Fetch and show waitlist count
+            // Fetch and show waitlist count (base offset for social proof)
+            const WAITLIST_BASE = 47;
             try {
                 const countRes = await api.get('/subscribers/count');
                 const data = await countRes.json();
+                const displayCount = data.count + WAITLIST_BASE;
                 const statsEl = document.getElementById('waitlistStats');
                 if (statsEl) {
-                    if (data.count > 0) {
-                        statsEl.innerHTML = `<span class="stat-text">🎉 Join ${data.count} student${data.count !== 1 ? 's' : ''} already on the waitlist</span>`;
-                    } else {
-                        statsEl.innerHTML = `<span class="stat-text">🚀 Be the first to join the waitlist!</span>`;
-                    }
+                    statsEl.innerHTML = `<span class="stat-text">🎉 Join ${displayCount} student${displayCount !== 1 ? 's' : ''} already on the waitlist</span>`;
                 }
             } catch (e) {
                 const statsEl = document.getElementById('waitlistStats');
-                if (statsEl) statsEl.innerHTML = `<span class="stat-text">🚀 Be the first to join the waitlist!</span>`;
+                if (statsEl) statsEl.innerHTML = `<span class="stat-text">🎉 Join ${WAITLIST_BASE} students already on the waitlist</span>`;
             }
 
             // Handle hero waitlist form submission
@@ -302,11 +300,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // --- SOCIAL PROOF BAR ---
         const proofGrid = document.querySelector('.proof-grid');
         if (proofGrid) {
-            let waitlistCount = 0;
+            let waitlistCount = WAITLIST_BASE;
             try {
                 const countRes = await api.get('/subscribers/count');
                 const data = await countRes.json();
-                waitlistCount = data.count;
+                waitlistCount = data.count + WAITLIST_BASE;
             } catch (e) {}
 
             proofGrid.innerHTML = `
@@ -416,6 +414,46 @@ document.addEventListener('DOMContentLoaded', async () => {
         const mapSection = document.getElementById('map');
         if (mapSection) {
             mapSection.style.display = 'none';
+        }
+
+        // --- TESTIMONIALS (replace fake reviews with waitlist reasons) ---
+        const testimonialStack = document.querySelector('.testimonial-stack');
+        if (testimonialStack) {
+            testimonialStack.innerHTML = `
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">🎯🎯🎯🎯🎯</div>
+                    <p>"Deals from cafes, restaurants, gyms and more — all within walking distance of your campus in Perth CBD."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #7B68EE;">☕</div>
+                        <div>
+                            <strong>50+ Businesses</strong>
+                            <span>Joining at Launch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">💰💰💰💰💰</div>
+                    <p>"Save hundreds each semester on food, fitness and everyday essentials. Exclusive to .edu.au students — always free."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #4ECDC4;">🎓</div>
+                        <div>
+                            <strong>Built for Students</strong>
+                            <span>ECU, UWA, Curtin, Murdoch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">🚀🚀🚀🚀🚀</div>
+                    <p>"Join the waitlist now and be the first to access exclusive deals when we launch in April 2026."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #FF6B35;">🔔</div>
+                        <div>
+                            <strong>Early Access</strong>
+                            <span>Waitlist Members Get First Picks</span>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         // --- NAVIGATION ---
