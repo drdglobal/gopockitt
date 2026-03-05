@@ -202,6 +202,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     async function initPrelaunchMode() {
         document.body.classList.add('prelaunch-mode');
 
+        // Base waitlist offset for social proof (declared at function scope so all sections can access it)
+        const WAITLIST_BASE = 47;
+
         // --- HERO SECTION ---
         const heroContent = document.querySelector('.hero-content');
         if (heroContent) {
@@ -242,8 +245,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
 
-            // Fetch and show waitlist count (base offset for social proof)
-            const WAITLIST_BASE = 47;
+            // Fetch and show waitlist count
             try {
                 const countRes = await api.get('/subscribers/count');
                 const data = await countRes.json();
